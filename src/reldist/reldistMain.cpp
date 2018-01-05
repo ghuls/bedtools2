@@ -75,10 +75,10 @@ int reldist_main(int argc, char* argv[]) {
             summary = false;
         }
         else {
-            cerr << endl 
-                 << "*****ERROR: Unrecognized parameter: " 
-                 << argv[i] 
-                 << " *****" 
+            cerr << endl
+                 << "*****ERROR: Unrecognized parameter: "
+                 << argv[i]
+                 << " *****"
                  << endl << endl;
             showHelp = true;
         }
@@ -86,12 +86,12 @@ int reldist_main(int argc, char* argv[]) {
 
     // make sure we have both input files
     if (!haveBedA || !haveBedB) {
-        cerr << endl 
-             << "*****" 
-             << endl 
-             << "*****ERROR: Need -a and -b files. " 
-             << endl 
-             << "*****" 
+        cerr << endl
+             << "*****"
+             << endl
+             << "*****ERROR: Need -a and -b files. "
+             << endl
+             << "*****"
              << endl;
         showHelp = true;
     }
@@ -99,7 +99,7 @@ int reldist_main(int argc, char* argv[]) {
 
     if (!showHelp) {
 
-        RelativeDistance *rd = new RelativeDistance(bedAFile, 
+        RelativeDistance *rd = new RelativeDistance(bedAFile,
                                                     bedBFile,
                                                     summary);
         delete rd;
@@ -114,21 +114,21 @@ int reldist_main(int argc, char* argv[]) {
 void reldist_help(void) {
 
     cerr << "\nTool:    bedtools reldist" << endl;
-    cerr << "Version: " << VERSION << "\n";    
+    cerr << "Version: " << VERSION << "\n";
     cerr << "Summary: Calculate the relative distance distribution "
          << "b/w two feature files."
          << endl << endl;
 
-    cerr << "Usage:   " 
-         << PROGRAM_NAME 
-         << " [OPTIONS] -a <bed/gff/vcf> -b <bed/gff/vcf>" 
+    cerr << "Usage:   "
+         << PROGRAM_NAME
+         << " [OPTIONS] -a <bed/gff/vcf> -b <bed/gff/vcf>"
          << endl << endl;
 
     cerr << "Options: " << endl;
 
 
-    cerr << "\t-detail\t"       << "Instead of a summary, report the relative" 
-                                << "\t\t distance for each interval in A" 
+    cerr << "\t-detail\t"       << "Instead of a summary, report the relative distance for each\n"
+                                << "\t\tinterval in A."
                                 << endl << endl;
     // end the program here
     exit(1);
